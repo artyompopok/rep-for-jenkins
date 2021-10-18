@@ -4,6 +4,7 @@ pipeline {
 	    stage("Main"){
 		    echo 'lol'
 		}
+	}
 /*
     agent { dockerfile true }
 	stages {
