@@ -2,9 +2,12 @@ pipeline {
     agent any
 	stages {
 	    stage("Main"){
-		    echo 'lol'
+		    steps {
+		        echo 'lol'
+			}
 		}
 	}
+}
 /*
     agent { dockerfile true }
 	stages {
@@ -23,4 +26,3 @@ pipeline {
         }
     }
 */
-}
