@@ -1,30 +1,26 @@
 pipeline {
-/*
-    agent any
-	stages {
-	    stage("Main"){
-		    steps {
-		        echo 'lol'
-			}
-		}
-	}
-*/
-    agent { dockerfile true }
-	stages {
+    agent { 
+        dockerfile {
+            dir '/project/build'
+            reuseNode true
+        }
+    }
+    stages {
         stage("Build"){
             steps {
-		        sh 'nginx -v'
-			}
+                sh '
+                sh 'nginx -v'
+            }
         }
-		stage("Test"){
-		steps {
-		        sh 'nginx -v'
-			}
+        stage("Test"){
+        steps {
+                sh 'nginx -v'
+            }
         }
-		stage("Deploy"){
+        stage("Deploy"){
             steps {
-		        sh 'nginx -v'
-			}
+                sh 'nginx -v'
+            }
         }
     }
 }
