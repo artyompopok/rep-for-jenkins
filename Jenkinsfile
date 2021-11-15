@@ -8,7 +8,6 @@ pipeline {
     stages {
         stage("Build"){
             steps {
-                sh '
                 sh 'nginx -v'
             }
         }
