@@ -1,16 +1,13 @@
 pipeline {
     agent {
-	    node {
-            customWorkspace '/project'
-		}
         dockerfile {
             dir '/project'
             reuseNode true
         }
     }
     stages {
+	    dir '/project'
         stage("Build"){
-            dir '/project'
             steps {
                 sh 'nginx -v'
             }
