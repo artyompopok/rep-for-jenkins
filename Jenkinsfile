@@ -6,9 +6,11 @@ pipeline {
         }
     }
     stages {
-	    dir '/project'
         stage("Build"){
             steps {
+			    echo "WS is ${env.WORKSPACE}"
+				sh 'cp -r ${env.WORKSPACE}/. /project/'
+				sh 'ls /project'
                 sh 'nginx -v'
             }
         }
