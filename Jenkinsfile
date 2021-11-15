@@ -1,13 +1,17 @@
 pipeline {
     agent {
+	    node {
+#            label 'my-defined-label'
+            customWorkspace '/project'
+		}
         dockerfile {
-            ws('/project')
+            dir '/project'
             reuseNode true
         }
     }
     stages {
         stage("Build"){
-            ws('/project')
+            dir '/project'
             steps {
                 sh 'nginx -v'
             }
