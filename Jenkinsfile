@@ -1,27 +1,26 @@
 pipeline {
     agent {
-	    ws('/project') {
-			dockerfile {
-				dir '/project'
-				reuseNode true
-			}
-		}
-		stages {
-			stage("Build"){
-				steps {
-					sh 'nginx -v'
-				}
-			}
-			stage("Test"){
-			steps {
-					sh 'nginx -v'
-				}
-			}
-			stage("Deploy"){
-				steps {
-					sh 'nginx -v'
-				}
-			}
-		}
+        dockerfile {
+            ws('/project')
+            reuseNode true
+        }
+    }
+    stages {
+        stage("Build"){
+            ws('/project')
+            steps {
+                sh 'nginx -v'
+            }
+        }
+        stage("Test"){
+        steps {
+                sh 'nginx -v'
+            }
+        }
+        stage("Deploy"){
+            steps {
+                sh 'nginx -v'
+            }
+        }
     }
 }
