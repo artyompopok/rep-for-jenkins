@@ -13,17 +13,17 @@ pipeline {
 	stages {
         stage("Build"){
             steps {
-		        sh 'nginx --version'
+		        sh 'nginx -v'
 			}
         }
 		stage("Test"){
 		steps {
-		        sh 'nginx --version'
+		        sh 'nginx -v'
 			}
         }
 		stage("Deploy"){
             steps {
-		        sh 'nginx --version'
+		        sh 'nginx -v'
 			}
         }
     }
