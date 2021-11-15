@@ -1,6 +1,6 @@
 pipeline {
-    ws('/project') {
-		agent { 
+    agent {
+	    ws('/project') {
 			dockerfile {
 				dir '/project'
 				reuseNode true
@@ -23,5 +23,5 @@ pipeline {
 				}
 			}
 		}
-	}
+    }
 }
