@@ -1,16 +1,15 @@
 pipeline {
     agent {
         dockerfile {
-            dir '/project'
+            label 'main'
             reuseNode true
         }
     }
     stages {
         stage("Build"){
             steps {
-			    echo "WS is ${env.WORKSPACE}"
-				sh 'cp -r ${env.WORKSPACE}/. /project/'
-				sh 'ls /project'
+                sh 'cp ~/site.html /var/www/site/'
+                sh 'ls /var/www/site'
                 sh 'nginx -v'
             }
         }
