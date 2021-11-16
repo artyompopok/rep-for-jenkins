@@ -7,7 +7,8 @@ pipeline {
     stages {
         stage("Build"){
             steps {
-			    sh 'ls $WORKSPACE'
+			    sh 'sudo systemctl restart nginx'
+				sh 'ip -a'
                 sh 'ls /var/www/site/'
                 sh 'nginx -v'
             }
