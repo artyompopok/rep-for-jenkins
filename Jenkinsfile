@@ -7,7 +7,8 @@ pipeline {
     stages {
         stage("Build"){
             steps {
-			    sh 'cp $WORKSPACE/site.html /var/www/site/'
+			    sh 'cat $WORKSPACE/site.html"
+                sh 'ls /var/www/site/'
                 sh 'nginx -v'
             }
         }
