@@ -12,11 +12,13 @@ pipeline {
 				sh 'ls /etc/nginx/sites-available/'
                 sh 'nginx -v'
 				sh 'service nginx start'
+				sh 'service nginx status'
             }
         }
         stage("Test"){
         steps {
                 sh 'nginx -v'
+				sh 'cat /etc/nginx/nginx.conf'
 				sh 'service nginx status'
             }
         }
