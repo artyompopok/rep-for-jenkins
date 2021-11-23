@@ -11,15 +11,13 @@ pipeline {
 				sh 'ls -laR /etc/nginx/'
                 sh 'nginx -v'
 				sh 'service nginx start'
-				sh 'cat /etc/nginx/conf.d/default.conf'
-				sh 'service nginx status'
+				sh 'telnet localhost 1234 && sleep 20'
             }
         }
         stage("Test"){
         steps {
                 sh 'nginx -v'
-				sh 'cat /etc/nginx/nginx.conf'
-				sh 'service nginx status'
+				sh 'telnet localhost 1234'
             }
         }
         stage("Deploy"){
