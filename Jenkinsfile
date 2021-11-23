@@ -12,7 +12,7 @@ pipeline {
 				sh 'ls /etc/nginx/sites-available/'
                 sh 'nginx -v'
 				sh 'service nginx start'
-				sh 'cat /etc/nginx/conf.d/nginx.conf'
+				sh 'cat /etc/nginx/conf.d/default.conf'
 				sh 'cat /var/log/nginx/access.log'
 				sh 'service nginx status'
             }
