@@ -12,13 +12,14 @@ pipeline {
                 sh 'nginx -v'
 				sh 'service nginx start'
 				sh 'wget http://localhost:1234'
-				sh 'cat site.html'
+				sh 'cat index.html'
             }
         }
         stage("Test"){
         steps {
                 sh 'nginx -v'
-				sh 'telnet localhost 1234'
+				sh 'wget http://localhost:1234'
+				sh 'cat index.html'
             }
         }
         stage("Deploy"){
