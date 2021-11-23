@@ -12,6 +12,8 @@ pipeline {
 				sh 'ls /etc/nginx/sites-available/'
                 sh 'nginx -v'
 				sh 'service nginx start && sleep 20'
+				sh 'cat /var/log/nginx/access.log'
+				sh 'ls /etc/nginx/conf.d/'
 				sh 'service nginx status'
             }
         }
