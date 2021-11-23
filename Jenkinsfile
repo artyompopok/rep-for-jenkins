@@ -11,7 +11,7 @@ pipeline {
                 sh 'ls /var/www/site/'
 				sh 'ls /etc/nginx/sites-available/'
                 sh 'nginx -v'
-				sh 'service nginx start'
+				sh 'service nginx start && sleep 20'
 				sh 'service nginx status'
             }
         }
