@@ -7,13 +7,16 @@ pipeline {
     stages {
         stage("Build"){
             steps {
+/*				sh 'ip -a'*/
                 sh 'ls /var/www/site/'
+				sh 'ls /etc/nginx/sites-available/'
                 sh 'nginx -v'
             }
         }
         stage("Test"){
         steps {
                 sh 'nginx -v'
+				sh 'service nginx status'
             }
         }
         stage("Deploy"){
