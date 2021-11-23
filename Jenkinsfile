@@ -7,13 +7,11 @@ pipeline {
     stages {
         stage("Build"){
             steps {
-/*				sh 'ip -a'*/
                 sh 'ls /var/www/site/'
-				sh 'ls /etc/nginx/sites-available/'
+				sh 'ls - la /etc/nginx/'
                 sh 'nginx -v'
 				sh 'service nginx start'
 				sh 'cat /etc/nginx/conf.d/default.conf'
-				sh 'cat /var/log/nginx/access.log'
 				sh 'service nginx status'
             }
         }
