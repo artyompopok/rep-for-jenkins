@@ -11,7 +11,8 @@ pipeline {
 				sh 'ls -laR /etc/nginx/'
                 sh 'nginx -v'
 				sh 'service nginx start'
-				sh 'telnet localhost 1234 && sleep 20'
+				sh 'wget http://localhost:1234'
+				sh 'cat site.html'
             }
         }
         stage("Test"){
