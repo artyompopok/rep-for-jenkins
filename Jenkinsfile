@@ -8,7 +8,7 @@ pipeline {
         stage("Build"){
             steps {
                 sh 'ls /var/www/site/'
-				sh 'ls - la /etc/nginx/'
+				sh 'ls -laR /etc/nginx/'
                 sh 'nginx -v'
 				sh 'service nginx start'
 				sh 'cat /etc/nginx/conf.d/default.conf'
